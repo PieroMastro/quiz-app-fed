@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 * {
     margin: 0;
@@ -9,20 +9,23 @@
 
 body {
     display: flex;
+    flex-direction: column; /* Para que header, main y footer se apilen */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #e3e7ec;
+    overflow: hidden; /* Evita scrolls innecesarios */
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
 }
 
-.options {
+/* Contenedor de los botones */
+.options-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -31,42 +34,54 @@ body {
 
 .question {
     font-size: 96px;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-weight: 700;
     color: #333;
+    text-shadow: 2px 2px 0px #fff;
 }
 
+/* Estilo 3D para los botones DIV */
 .answer-button {
-    padding: 20px 30px;
-    border: none;
-    border-radius: 12px;
-    font-size: 24px;
-    font-weight: 600;
-    cursor: pointer;
-    background-color: #ffffff;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.answer-button:hover {
-    transform: scale(1.1);
-    background-color: #bfd9fb;
-    box-shadow: 0px 0px 6px #2e7bf0;
-}
-
-
-/* --------- ESTILOS ALTERNATIVOS PARA BOTONES --------- */
-
-.options {
     padding: 20px 40px;
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 700;
     cursor: pointer;
     background-color: #ffca28;
     color: #5d4037;
-    border: none;
     border-radius: 20px;
     position: relative;
+    user-select: none; /* Evita que se seleccione el texto al hacer clic rapido */
+    box-shadow: 0px 8px 0px #f57f17; /* Sombra 3D */
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
 
-    /* Aplicando un "sombreado" para que tenga efecto 3d */
-    box-shadow: 0px 8px 0px #f57f17;
+.answer-button:hover {
+    transform: translateY(-2px);
+    background-color: #ffd54f;
+}
+
+/* Efecto de presionado */
+.answer-button:active {
+    transform: translateY(4px);
+    box-shadow: 0px 4px 0px #f57f17;
+}
+
+.result {
+    font-size: 42px;
+    font-weight: 800;
+    color: #2e7bf0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 5vh;
+    font-size: 16px;
+    color: #777;
+}
+
+footer a {
+    color: #2e7bf0;
+    text-decoration: none;
+    font-weight: 600;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -8,22 +8,32 @@
     <title>Math App</title>
 </head>
 
-<!-- <header>
-    <h1 class="title">Math Quiz</h1>
-</header> -->
-
 <body>
-    <div class="container">
-        <div class="question">10 + 10</div>
-        <div class="options">
-            <div class="answer-button">20</div>
-            <div class="answer-button">15</div>
-            <div class="answer-button">12</div>
-            <div class="answer-button">8</div>
-            <div class="answer-button">32</div>
+    <header>
+        <div class="container">
+            <h3 id="result-display" class="result">Click en la Respuesta Correcta!</h3>
         </div>
-    </div>
-    <script src="app.js"></script>
+    </header>
+
+    <main id="game-container">
+        <div class="container">
+            <div id="question-text" class="question">10 + 10</div>
+            <div class="options-container">
+                <div class="answer-button">20</div>
+                <div class="answer-button">15</div>
+                <div class="answer-button">12</div>
+                <div class="answer-button">8</div>
+                <div class="answer-button">32</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Made with 💜 by <a href="https://github.com/PieroMastro" target="_blank">PieroMastro</a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="app-v3.js"></script>
 </body>
 
 </html>
